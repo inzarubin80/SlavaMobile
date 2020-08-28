@@ -8,7 +8,7 @@ import ProductScreen from '../sreens/ProductScreen'
 import SettingsScreen from '../sreens/SettingsScreen'
 import NewsScreen from '../sreens/NewsScreen'
 
-
+//1
 const Tab = createBottomTabNavigator();
 const StackKatalog = createStackNavigator();
 
