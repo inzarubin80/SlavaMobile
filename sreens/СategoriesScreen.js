@@ -12,15 +12,18 @@ import { CATEGORIES } from '../data/dummy-data';
 import CategoryGridTile from '../components/CategoryGridTile';
 
 const CategoriesScreen = props => {
+  
+  props.navigation.setOptions({ headerTitle: 'Категории продукции' })
+
   const renderGridItem = itemData => {
     return (
       <CategoryGridTile
         title={itemData.item.title}
         color={itemData.item.color}
         onSelect={() => {
-          props.navigation.navigate('TypesScreen',
+          props.navigation.navigate('ProductsScreen',
             {
-              categoryId: itemData.item.id
+              catId: itemData.item.id
             }
           );
         }}
