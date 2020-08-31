@@ -16,16 +16,36 @@ const Katalog = () => {
     return (
         <StackKatalog.Navigator>
             <StackKatalog.Screen name="СategoriesScreen" component={СategoriesScreen} 
-             options={{
+            
+            options={{
               title: 'Категории продукции',
-              headerTintColor: '#fff',
+              headerStyle: {
+                //backgroundColor: '#f4511e',
+                color: '#952833',
+              },
+              //headerTintColor: '#fff',
               headerTitleStyle: {
-                fontWeight: 'bold',
+                color: '#952833'
+                
               },
             }}
             />
-            <StackKatalog.Screen name="ProductsScreen" component={ProductsScreen} />
-            <StackKatalog.Screen name="ProductScreen" component={ProductScreen} />
+            <StackKatalog.Screen name="ProductsScreen" component={ProductsScreen}   options={{
+             
+              headerTitleStyle: {
+                color: '#952833'
+                
+              },
+            }} />
+            <StackKatalog.Screen name="ProductScreen" component={ProductScreen} options={{
+             
+             headerTitleStyle: {
+               color: '#952833'
+               
+             },
+           }}
+            
+            />
         </StackKatalog.Navigator>
     );
 };

@@ -11,7 +11,7 @@ const ProductsScreen = props => {
 
   props.navigation.setOptions({ headerTitle: selectedCategory.title })
 
-  console.log(catId);
+  //console.log(catId);
 
   //const catId = props.navigation.getParam('categoryId');
 

@@ -13,7 +13,7 @@ import CategoryGridTile from '../components/CategoryGridTile';
 
 const CategoriesScreen = props => {
   
-  //props.navigation.setOptions({ headerTitle: 'Категории продукции' })
+//  props.navigation.setOptions({ headerTitle: 'Категории продукции', })
 
   const renderGridItem = itemData => {
     return (
