@@ -15,7 +15,15 @@ const StackKatalog = createStackNavigator();
 const Katalog = () => {
     return (
         <StackKatalog.Navigator>
-            <StackKatalog.Screen name="СategoriesScreen" component={СategoriesScreen} />
+            <StackKatalog.Screen name="СategoriesScreen" component={СategoriesScreen} 
+             options={{
+              title: 'Категории продукции',
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+              },
+            }}
+            />
             <StackKatalog.Screen name="ProductsScreen" component={ProductsScreen} />
             <StackKatalog.Screen name="ProductScreen" component={ProductScreen} />
         </StackKatalog.Navigator>
