@@ -10,15 +10,15 @@ const ProductList = props => {
         title={itemData.item.title}
         image={itemData.item.imageUrl}
         destination={itemData.item.destination}
-        //complexity={itemData.item.complexity}
-        //affordability={itemData.item.affordability}
+    
         onSelectMeal={() => {
-          props.navigation.navigate({
-            routeName: 'MealDetail',
-            params: {
-              mealId: itemData.item.id
-            }
-          });
+             
+          props.navigation.navigate('ProductScreen',
+          {
+            catId: itemData.item.id
+          }
+        
+          );
         }}
       />
     );
