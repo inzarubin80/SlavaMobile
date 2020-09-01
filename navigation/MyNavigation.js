@@ -19,11 +19,7 @@ const Katalog = () => {
             
             options={{
               title: 'Категории продукции',
-              headerStyle: {
-                //backgroundColor: '#f4511e',
-                color: '#952833',
-              },
-              //headerTintColor: '#fff',
+             
               headerTitleStyle: {
                 color: '#952833'
                 
