@@ -15,7 +15,7 @@ const ProductList = props => {
              
           props.navigation.navigate('ProductScreen',
           {
-            catId: itemData.item.id
+            prodId: itemData.item.id
           }
         
           );

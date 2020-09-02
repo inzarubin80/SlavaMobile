@@ -6,8 +6,6 @@ import ProductList from '../components/ProductList';
 const ProductsScreen = props => {
   
   const {catId} = props.route.params;
-
- 
   const selectedCategory = CATEGORIES.find((cat)=>cat.id===catId);
 
   React.useLayoutEffect(() => {
