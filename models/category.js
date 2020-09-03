@@ -1,10 +1,10 @@
 class  category{
 
-    constructor(id, title, photo){
+    constructor(id, title, imageUrl){
        
         this.id   = id;
         this.title = title;
-        this.photo = photo;
+        this.imageUrl = imageUrl;
         
     }
 } 

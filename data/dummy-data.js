@@ -1,13 +1,16 @@
 import Category from '../models/category';
 import Product from '../models/product';
 
+import sausage from '../images/sausage.png';
+import sausages from '../images/sausages.png';
+import medicine from '../images/medicine.png';
+
 
 export const CATEGORIES = [
-  new Category('c1', 'Белковая колбасная оболочка', ''),
-  new Category('c2', 'Белковая сосисочная оболочка', ''),
-  new Category('c3', 'Медицина', ''),
+  new Category('c1', 'Белковая колбасная оболочка', sausage),
+  new Category('c2', 'Белковая сосисочная оболочка', sausages),
+  new Category('c3', 'Медицина', medicine),
 ];
-
 
 
 const imageUrl = 'http://belkozin.com/wp-content/uploads/2018/03/Belkozin_Packagig_frankfurter_01.png';
