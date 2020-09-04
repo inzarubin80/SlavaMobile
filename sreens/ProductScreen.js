@@ -40,12 +40,12 @@ const ProductScreen = props => {
       </ScrollView>
   );
 };
-
+/1
 /*
 MealDetailScreen.navigationOptions = navigationData => {
   const mealId = navigationData.navigation.getParam('mealId');
   const selectedMeal = MEALS.find(meal => meal.id === mealId);
-  return {
+   ///return {
     headerTitle: selectedMeal.title,
     headerRight: (
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
