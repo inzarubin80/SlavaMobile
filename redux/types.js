@@ -1,0 +1,1 @@
+export const INSET_FAVORITE        = 'APP/INSET_FAVORITE';

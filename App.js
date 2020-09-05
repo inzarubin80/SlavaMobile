@@ -1,9 +1,15 @@
 import React from 'react';
 import MyNavigation from './navigation/MyNavigation'
-import { View } from 'react-native';
+import { Provider } from 'react-redux';
+import {createStore} from 'redux';
+import rootReducer from './redux/rootReducer';
 
+const store = createStore(rootReducer);
 const App = ()  => {
-  return (<MyNavigation/> );
+  return (<Provider store={store}> 
+      <MyNavigation/> 
+  </Provider>
+  );
 };
 
 export default App;

@@ -1,17 +1,14 @@
 import React from 'react';
+
 import {
   ScrollView,
   View,
   Image,
-  Text,
-  Button,
   StyleSheet
 } from 'react-native';
 
-//import { HeaderButtons, Item } from 'react-navigation-header-buttons';
-
+import { Button, Icon } from 'react-native-elements';
 import { Products } from '../data/dummy-data';
-//import HeaderButton from '../components/HeaderButton';
 import DefaultText from '../components/DefaultText';
 
 const ListItem = props => {
@@ -23,44 +20,42 @@ const ListItem = props => {
 };
 
 const ProductScreen = props => {
-  
-  
-  const {prodId} = props.route.params;
-  const selectedProduct = Products.find((prod)=>prod.id===prodId);
+
+  const { prodId } = props.route.params;
+  const selectedProduct = Products.find((prod) => prod.id === prodId);
 
   React.useLayoutEffect(() => {
     props.navigation.setOptions({
       title: selectedProduct.title,
+
+      headerRight: () => (
+        <Button
+          onPress={() => alert('This is a button!')}
+          type="clear"
+  //        icon={<Icon name='star-outline'  type='ionicon' color='#ffd700' />}
+
+          icon={<Icon
+  name='star-border'
+  //color='#00aced' 
+  
+  />}
+
+
+
+          
+        />
+      ),
+
     });
   }, [props.navigation]);
 
   return (
     <ScrollView>
       <Image source={{ uri: selectedProduct.imageUrl }} style={styles.image} />
-      </ScrollView>
+    </ScrollView>
   );
 };
-/1
-/*
-MealDetailScreen.navigationOptions = navigationData => {
-  const mealId = navigationData.navigation.getParam('mealId');
-  const selectedMeal = MEALS.find(meal => meal.id === mealId);
-   ///return {
-    headerTitle: selectedMeal.title,
-    headerRight: (
-      <HeaderButtons HeaderButtonComponent={HeaderButton}>
-        <Item
-          title="Favorite"
-          iconName="ios-star"
-          onPress={() => {
-            console.log('Mark as favorite!');
-          }}
-        />
-      </HeaderButtons>
-    )
-  };
-};
-*/
+
 
 const styles = StyleSheet.create({
   image: {
@@ -83,7 +78,21 @@ const styles = StyleSheet.create({
     borderColor: '#ccc',
     borderWidth: 1,
     padding: 10
-  }
+  },
+
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    margin: 10,
+  },
+
 });
 
 export default ProductScreen;
