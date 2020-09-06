@@ -16,7 +16,7 @@ const StackKatalog = createStackNavigator();
 const Drawer = createDrawerNavigator();
 const StackOrder = createStackNavigator();
 
-
+import {Text} from 'react-native';
 
 const Order = () => {
   return (
@@ -88,17 +88,28 @@ const tabNavigation = (props) => {
         let iconName;
 
         if (route.name === 'Katalog') {
-          iconName = 'library-books';
+          iconName = 'view-list';
         } else if (route.name === 'Order') {
           iconName = 'add-shopping-cart';
         }
 
-        return   <Icon name= {iconName} color={color}/>;
+        return   <Icon name= {iconName} color={color} size={size}/>;
+      },
+
+      tabBarLabel: ({ focused, color, size }) => {
+        let title = '';
+        if (route.name === 'Katalog') {
+          title = 'Каталог';
+        } else if (route.name === 'Order') {
+          title = 'Заказ';
+        }
+        return <Text>{title}</Text>;
       },
     })}
+    
     tabBarOptions={{
-      activeTintColor: 'tomato',
-      inactiveTintColor: 'gray',
+      activeTintColor:    '#952833',
+      inactiveTintColor:  'gray',
     }}
     
     >

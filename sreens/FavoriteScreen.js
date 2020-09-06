@@ -9,11 +9,10 @@ const FavoriteScreen = ({ navigation, favorites }) => {
 
   React.useLayoutEffect(() => {
     navigation.setOptions({
-     title: 'Выбранные позиции',
      headerRight: () => (  
       <Button
       onPress = {()=>{alert('Открывается форма заказа образцов!!!')}}
-      title="Заказать образцы" 
+      title="Заказать" 
       type="clear"
     />
      ),
