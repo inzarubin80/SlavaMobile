@@ -22,15 +22,4 @@ const ProductsScreen = props => {
   return <ProductList listData={displayedProducts} navigation={props.navigation} />;
 };
 
-/*
-ProductsScreen.navigationOptions = navigationData => {
-  const catId = navigationData.navigation.getParam('categoryId');
-
-  const selectedCategory = CATEGORIES.find(cat => cat.id === catId);
-
-  return {
-    headerTitle: selectedCategory.title
-  };
-};
-*/
 export default ProductsScreen;

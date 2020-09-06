@@ -3,7 +3,10 @@ import { View, FlatList, StyleSheet } from 'react-native';
 
 import ProductItem from './ProductItem';
 
-const ProductList = props => {
+const ProductList = ({navigation, listData}) => {
+
+  console.log('ProductList ' + listData.length);
+
   const renderProductItem = itemData => {
     return (
       <ProductItem
@@ -13,7 +16,7 @@ const ProductList = props => {
     
         onSelectMeal={() => {
              
-          props.navigation.navigate('ProductScreen',
+          navigation.navigate('ProductScreen',
           {
             prodId: itemData.item.id
           }
@@ -27,7 +30,7 @@ const ProductList = props => {
   return (
     <View style={styles.list}>
       <FlatList
-        data={props.listData}
+        data={listData}
         keyExtractor={(item, index) => item.id}
         renderItem={renderProductItem}
         style={{ width: '100%' }}

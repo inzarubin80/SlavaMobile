@@ -9,7 +9,10 @@ import {
 
 import { Button, Icon } from 'react-native-elements';
 import { Products } from '../data/dummy-data';
-import DefaultText from '../components/DefaultText';
+import DefaultText from '../components/DefaultText'; 
+import { connect } from 'react-redux'
+
+import {addFavorite, removeFavorite} from '../redux/actions';
 
 const ListItem = props => {
   return (
@@ -19,35 +22,30 @@ const ListItem = props => {
   );
 };
 
-const ProductScreen = props => {
+const ProductScreen = ({favorites, route, navigation, addFavorite, removeFavorite}) => {
 
-  const { prodId } = props.route.params;
+  const { prodId } = route.params;
   const selectedProduct = Products.find((prod) => prod.id === prodId);
 
+  //favorites.find((prodId) => prodId === prodId);
+
+  const isFavorite = favorites.includes(prodId);
+  console.log('isFavorite ' + isFavorite);
+  console.log('length ' + favorites.length);
+
   React.useLayoutEffect(() => {
-    props.navigation.setOptions({
+     navigation.setOptions({
       title: selectedProduct.title,
 
       headerRight: () => (
         <Button
-          onPress={() => alert('This is a button!')}
+          onPress={()=>{isFavorite ? removeFavorite(prodId):addFavorite(prodId)}}
           type="clear"
-  //        icon={<Icon name='star-outline'  type='ionicon' color='#ffd700' />}
-
-          icon={<Icon
-  name='star-border'
-  //color='#00aced' 
-  
-  />}
-
-
-
-          
+          icon={<Icon name= {isFavorite ? 'star' : 'star-border'} color={isFavorite ? '#ffd700' : ''} />}
         />
       ),
-
     });
-  }, [props.navigation]);
+  }, [navigation, isFavorite]);
 
   return (
     <ScrollView>
@@ -55,6 +53,17 @@ const ProductScreen = props => {
     </ScrollView>
   );
 };
+
+const mapStateToProps = state => {
+  return {
+    favorites: state.app.favorites
+  }
+}
+
+const mapDispatchToProps = {
+  addFavorite, removeFavorite
+}
+
 
 
 const styles = StyleSheet.create({
@@ -92,7 +101,6 @@ const styles = StyleSheet.create({
     color: '#333333',
     margin: 10,
   },
-
 });
 
-export default ProductScreen;
+export default connect(mapStateToProps, mapDispatchToProps)(ProductScreen);
